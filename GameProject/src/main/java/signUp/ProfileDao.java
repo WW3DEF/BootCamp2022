@@ -1,4 +1,4 @@
-package project.dao;
+package signUp;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -7,11 +7,7 @@ import java.util.ArrayList;
 
 import javax.naming.Context;
 import javax.naming.InitialContext;
-import javax.naming.directory.SearchResult;
 import javax.sql.DataSource;
-
-import project.dto.CartDto;
-import project.dto.ProfileDto;
 
 public class ProfileDao {
 	private Connection getConnection() throws Exception {

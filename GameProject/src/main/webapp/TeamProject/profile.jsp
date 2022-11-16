@@ -1,6 +1,6 @@
 <%@page import="java.util.ArrayList"%>
-<%@page import="project.dao.ProfileDao"%>
-<%@page import="project.dto.ProfileDto"%>
+<%@page import="signUp.ProfileDao"%>
+<%@page import="signUp.ProfileDto"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 

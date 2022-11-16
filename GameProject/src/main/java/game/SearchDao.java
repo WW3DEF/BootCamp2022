@@ -1,4 +1,4 @@
-package project.dao;
+package game;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -9,8 +9,7 @@ import javax.naming.Context;
 import javax.naming.InitialContext;
 import javax.sql.DataSource;
 
-import project.dto.CartDto;
-import project.dto.SearchDto;
+import cart.CartDto;
 
 public class SearchDao {
 	private Connection getConnection() throws Exception {

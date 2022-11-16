@@ -1,4 +1,4 @@
-package project.dao;
+package signUp;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -7,8 +7,6 @@ import java.sql.ResultSet;
 import javax.naming.Context;
 import javax.naming.InitialContext;
 import javax.sql.DataSource;
-
-import project.dto.LoginCheckDto;
 
 public class LoginCheckDao {
 	private Connection getConnection() throws Exception {

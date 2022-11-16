@@ -1,8 +1,8 @@
-<%@page import="project.dto.CartDto"%>
-<%@page import="project.dao.CartDao"%>
-<%@page import="project.dto.SearchDto"%>
+<%@page import="cart.CartDto"%>
+<%@page import="cart.CartDao"%>
+<%@page import="game.SearchDto"%>
+<%@page import="game.SearchDao"%>
 <%@page import="java.util.ArrayList"%>
-<%@page import="project.dao.SearchDao"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%
@@ -80,10 +80,10 @@
 <%
 	// 나온 결과물들을 div에 넣어줌(바쁘게 마감한다고 코드가 많이 더럽습니다 죄송합니다.)
 	for(CartDto cdto : cdtos) {
-		System.out.println(cdto.getEmail());
-		System.out.println(cdto.getGnum());
+		System.out.println(cdto.getCuser());
+		System.out.println(cdto.getCgame());
 	
-	CartDto dtoo = new CartDto(cdto.getGprice(), cdto.getGnum(), cdto.getEmail());
+	CartDto dtoo = new CartDto(cdto.getCuser(), cdto.getCgame(), cdto.getCprice());
 	ArrayList<SearchDto> dtos = dao.SelectCartlist(dtoo);
 	for(SearchDto dto : dtos) {
 		System.out.println(dto.getGname());

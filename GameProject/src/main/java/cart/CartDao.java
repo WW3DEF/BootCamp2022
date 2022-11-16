@@ -9,9 +9,7 @@ import javax.naming.Context;
 import javax.naming.InitialContext;
 import javax.sql.DataSource;
 
-import cart.CartDto;
 import game.SearchDto;
-import game.GameDto;
 
 public class CartDao {
 	private Connection getConnection() throws Exception {
@@ -30,6 +28,7 @@ public class CartDao {
 	public ArrayList<SearchDto> SelectGame(String Search) {
 		ArrayList<SearchDto> dtos = new ArrayList<SearchDto>();
 		String sql = "select * from game where gname like ?";
+		System.out.println(sql);
 		int gnum = 0;
 		String gname = "";
 		int gprice = 0;
@@ -60,13 +59,15 @@ public class CartDao {
 	}
 	// 장바구니에 입력
 	public void insert(CartDto dto) {
-		String sql = "insert into cart(cuser, cgame) values(?, ?)";
+		String sql = "insert into cart(cuser, cgame, cprice) values(?, ? ,?)";
 		try(Connection con = getConnection();
 				PreparedStatement pstmt = con.prepareStatement(sql);
 			)
 		{
+		System.out.println(dto.getCprice());
 		pstmt.setString(1, dto.getCuser());
 		pstmt.setInt(2, dto.getCgame());
+		pstmt.setInt(3, dto.getCprice());
 		
 		pstmt.executeUpdate();
 		} catch(Exception e) {
@@ -99,10 +100,9 @@ public class CartDao {
 		return check;
 	}
 	// 회원정보 테이블의 기본키인 email로 조건을 걸어 누가 어떤 게임을 담았는지 출력
-	public ArrayList<CartDto> SelectCart(String email) {
+	public ArrayList<CartDto> SelectCart(String cuser) {
 		ArrayList<CartDto> dtos = new ArrayList<CartDto>();
 		String sql = "select * from cart where cuser=?";
-		String cuser = "";
 		int cgame = 0;
 		int cprice = 0;
 		try(
@@ -110,7 +110,7 @@ public class CartDao {
 				PreparedStatement pstmt = con.prepareStatement(sql);	// SQL 실행 준비
 		)
 		{
-			pstmt.setNString(1, email);
+			pstmt.setNString(1, cuser);
 			
 		try (ResultSet rs = pstmt.executeQuery();) 
 		{
@@ -131,19 +131,19 @@ public class CartDao {
 		return dtos;
 	}
 	// 회원가입의 기본키인 email를 조건달아 조건에 해당하는 유저의 장바구니 안에 담긴 게임들의 총합 가격를 검색
-	public int cartSumSelect(String email) {
-		String sql = "select sum(gprice) from cart where email=?";
+	public int cartSumSelect(String cuser) {
+		String sql = "select sum(cprice) from cart where cuser=?";
 		int sum=0;
 		try(
 			Connection con = getConnection();	// 커넥션 얻기
 			PreparedStatement pstmt = con.prepareStatement(sql);	// SQL 실행 준비
 		)
 		{
-			pstmt.setNString(1, email);
+			pstmt.setNString(1, cuser);
 			try(ResultSet rs = pstmt.executeQuery();)	
 			{
 				while(rs.next()) {
-					sum = rs.getInt("sum(gprice)");
+					sum = rs.getInt("sum(cprice)");
 				}
 			} catch (Exception e) {
 				e.printStackTrace();
@@ -154,14 +154,14 @@ public class CartDao {
 		return sum;
 	}
 	// email로 로그인한 유저의 장바구니 안을 결제 했을때 비워버림
-	public void payClearCart(String smail) {
-		String sql = "delete from cart where email=?";
+	public void payClearCart(String cuser) {
+		String sql = "delete from cart where cuser=?";
 		try(
 			Connection con = getConnection();	// 커넥션 얻기
 			PreparedStatement pstmt = con.prepareStatement(sql);	// SQL 실행 준비
 		)
 		{
-			pstmt.setString(1, smail);
+			pstmt.setString(1, cuser);
 			
 			pstmt.executeUpdate();
 			

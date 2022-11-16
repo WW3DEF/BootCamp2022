@@ -1,5 +1,5 @@
-<%@page import="project.dao.LoginCheckDao"%>
-<%@page import="project.dto.LoginCheckDto"%>
+<%@page import="signUp.LoginCheckDao"%>
+<%@page import="signUp.LoginCheckDto"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%

@@ -1,6 +1,6 @@
-<%@page import="project.dto.SearchDto"%>
+<%@page import="game.SearchDto"%>
 <%@page import="java.util.ArrayList"%>
-<%@page import="project.dao.SearchDao"%>
+<%@page import="game.SearchDao"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 
