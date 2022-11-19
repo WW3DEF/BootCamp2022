@@ -21,7 +21,7 @@
 </head>
 <body>
     <div id="header">
-        <a href="../MainPage.jsp"><img src="../css/image/Alogo.png" width=70px height=70px></a><h2>| GAME</h2>
+        <a href="../MainPage.do"><img src="../css/image/Alogo.png" width=70px height=70px></a><h2>| GAME</h2>
     </div>
     <div id="Category">
         <img src="../css/image/EldenRingLogo.png" width=150px height=70px id="EldenRingLogo"><div id="ScrollForCon"><a id="summary">게임 개요</a><a id="feature">게임 특징</a><a id="systemRequire">시스템 요구사항</a></div>

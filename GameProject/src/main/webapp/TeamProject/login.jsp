@@ -16,7 +16,7 @@
 <title>로그인</title>
 </head>
 <body>
-<form action="loginCheck.jsp" method="post">
+<form action="loginCheck.do" method="post">
 	<div id="imgArea">
 		<img src="image/Alogo.png" alt="이미지 없음" width="100" height="100">
 		<div id="loginBack">
@@ -24,7 +24,7 @@
 				<input type="text" placeholder="이메일 입력" id="putId" class="inputs" autocomplete="off" autofocus="on" name="lemail"><br>
 				<input type="password" placeholder="비밀번호 입력" id="putPwd" class="inputs" autocomplete="off" name="lpwd"><br>
 				<input type="submit" value="로그인" id="btnLogin"><br>
-				<a href="signup.jsp"><input type="button" value="회원가입" id="btnSignUp"></a>
+				<a href="signup.do"><input type="button" value="회원가입" id="btnSignUp"></a>
 			</div>
 		</div>
 	</div>

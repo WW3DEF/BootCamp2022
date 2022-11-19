@@ -16,7 +16,7 @@
 </head>
 <body>
     <div id="header">
-        <a href="../MainPage.jsp"><img src="../css/image/Alogo.png" width=70px height=70px></a><h2>| GAME</h2>
+        <a href="../MainPage.do"><img src="../css/image/Alogo.png" width=70px height=70px></a><h2>| GAME</h2>
     </div>
     <div id="imageSection">
         <img src="../css/image/warframeinfo.jpg" width="100%" height="100%">

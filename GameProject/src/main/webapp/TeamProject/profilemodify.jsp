@@ -101,7 +101,7 @@ p {
 
 </style>
 </head>
-<form action="profileUpdate.jsp" method="post">
+<form action="profileUpdate.do" method="post">
 <body>
 <h2>&nbsp;&nbsp;&nbsp;&nbsp;PROFILE</h2>
 

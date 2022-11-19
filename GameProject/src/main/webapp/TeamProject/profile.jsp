@@ -13,7 +13,7 @@
 </head>
 <body>
 <div id="header">
-  <a href="MainPage.jsp"><img src="css/image/Alogo.png" width=70px height=70px></a><h2>| PROFILE</h2>
+  <a href="MainPage.do"><img src="css/image/Alogo.png" width=70px height=70px></a><h2>| PROFILE</h2>
 </div>
 <h2>&nbsp;&nbsp;&nbsp;&nbsp;PROFILE</h2>
 
@@ -28,7 +28,7 @@
 <br>
 <br>
 <p style='width:80px; position: absolute; top: 25%; left: 70%;'>
-    <a href="profilemodify.jsp"><button class="snip1535">Modify</button></a>
+    <a href="profilemodify.do"><button class="snip1535">Modify</button></a>
 </p>
 </body>
 <%

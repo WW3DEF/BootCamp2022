@@ -29,13 +29,13 @@
 		System.out.println(email);
 %>		
 		<script type="text/javascript">
-		location.href="MainPage.jsp"
+		location.href="MainPage.do"
 		</script>
 <%
 	} else {
 %>
 		<script type="text/javascript">
-		location.href="login.jsp";
+		location.href="login.do";
 		alert('로그인에 실패했습니다. 다시 입력해주세요.');
 		</script>
 <%

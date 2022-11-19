@@ -30,7 +30,7 @@
 </head>
 <body>
     <div id="header">
-        <a href="MainPage.jsp"><img src="css/image/Alogo.png" width=70px height=70px></a><h2>| cart</h2>
+        <a href="MainPage.do"><img src="css/image/Alogo.png" width=70px height=70px></a><h2>| cart</h2>
     </div>
     <h2 id="SearchTitle">장바구니</h2>
     <div id="ResultList">
@@ -73,7 +73,7 @@
 			
 			</div>
 			<div id="sum"><h3>합계 : <%=sum %>원 </h3></div>
-			<div id="pay"><a href="payCheck.jsp"><input type="button" id="btnPay" value="결제"></a></div>
+			<div id="pay"><a href="payCheck.do"><input type="button" id="btnPay" value="결제"></a></div>
         </div>
     </div>
 </body>

@@ -11,7 +11,7 @@
 <title>회원가입</title>
 </head>
 <body>
-<form action="signupPro.jsp" method="post">
+<form action="signupPro.do" method="post">
 	<div id="signupArea">
 		<div id="logoHeader">
 			<div id="logo">

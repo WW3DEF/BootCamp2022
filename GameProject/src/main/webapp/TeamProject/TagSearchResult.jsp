@@ -19,7 +19,7 @@
 </head>
 <body>
     <div id="header">
-        <a href="MainPage.jsp"><img src="css/image/Alogo.png" width=70px height=70px></a><h2>| Result</h2>
+        <a href="MainPage.do"><img src="css/image/Alogo.png" width=70px height=70px></a><h2>| Result</h2>
     </div>
     <h2 id="SearchTitle">검색 결과</h2>
     <div id="ResultList">
