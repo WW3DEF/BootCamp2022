@@ -9,7 +9,6 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-@WebServlet("*.do")
 public class CartController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
     
@@ -27,6 +26,8 @@ public class CartController extends HttpServlet {
     		viewPage = "/WEB-INF/view/list.jsp";
     	}
     	*/
+    	
+    	
     	RequestDispatcher rd = request.getRequestDispatcher(viewPage);
     	rd.forward(request, response);
     }

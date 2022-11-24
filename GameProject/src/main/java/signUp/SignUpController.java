@@ -19,7 +19,12 @@ public class SignUpController extends HttpServlet {
     	
     	String uri = request.getRequestURI();
     	String com = uri.substring(uri.lastIndexOf("/")+1, uri.lastIndexOf(".do"));
+    	System.out.println(com);
 
+    	if(com != null && com.equals("index")) { 
+    		viewPage = "/TeamProject/IntroductionPage.jsp";
+    	}
+    	
     	RequestDispatcher rd = request.getRequestDispatcher(viewPage);
     	rd.forward(request, response);
     }
