@@ -6,16 +6,16 @@
 	<link
     rel="stylesheet"
 	href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
-	<link rel="stylesheet" href="css/signup.css">
+	<link rel="stylesheet" href="TeamProject/css/signup.css">
 <meta charset="UTF-8">
 <title>회원가입</title>
 </head>
 <body>
-<form action="signupPro.do" method="post">
+<form action="insert.sign" method="post">
 	<div id="signupArea">
 		<div id="logoHeader">
 			<div id="logo">
-			<img src="image/Alogo.png" alt="이미지 없음" width="100" height="100"><h1>JOYPARK</h1>
+			<img src="TeamProject/css/image/Alogo.png" alt="이미지 없음" width="100" height="100"><h1>JOYPARK</h1>
 			</div>
 		</div>
 		<div id="insertInfo">

@@ -10,9 +10,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>GameInformation</title>
-    <link rel="stylesheet" href="../css/Gameinfo.css">
-    <link rel="stylesheet" href="../css/header.css">
-    <script type="text/javascript" src="../jsfolder/clickinsert.js?ver=1"></script>
+    <link rel="stylesheet" href="TeamProject/css/Gameinfo.css">
+    <link rel="stylesheet" href="TeamProject/css/header.css">
+    <script type="text/javascript" src="TeamProject/jsfolder/clickinsert.js?ver=1"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
@@ -20,10 +20,10 @@
 </head>
 <body>
     <div id="header">
-        <a href="../MainPage.do"><img src="../css/image/Alogo.png" width=70px height=70px></a><h2>| GAME</h2>
+        <a href="MainPage.sign"><img src="TeamProject/css/image/Alogo.png" width=70px height=70px></a><h2>| GAME</h2>
     </div>
     <div id="imageSection">
-        <img src="../css/image/divisioninfo.jpg" width="100%" height="100%">
+        <img src="TeamProject/css/image/divisioninfo.jpg" width="100%" height="100%">
                 <div id="FirstInfo">
                 <h1 id="GameTitle">Tom clancys The Division</h1>
                 <h3 id="Developer">Ubisoft</h3>
@@ -37,8 +37,8 @@
                 <input type="button" value="장바구니에 담기" id="putInCart">
                 <h4 id="AvildDate">출시 2016년 3월 8일</h4>
                 <div id="StackView">
-                    <img src="../css/image/SoloPlay.png" width=30px height=30px><span>싱글 플레이</span>
-                    <img src="../css/image/PartyPlay.png" width=40px height=40px><span>온라인 협동</span>
+                    <img src="TeamProject/css/image/SoloPlay.png" width=30px height=30px><span>싱글 플레이</span>
+                    <img src="TeamProject/css/image/PartyPlay.png" width=40px height=40px><span>온라인 협동</span>
             </div>
         </div>
     </div>

@@ -1,4 +1,4 @@
-body {background-color: #d0d8e2;}
+TeamProject/body {background-color: #d0d8e2;}
 #ResultList {position: absolute; top: 20%; left: 10%; width: 80%; height: 100%}
 #ListHeader {position: absolute; height: 10%; width: 100%; border-top: 3px; border-bottom: 3px; border-top-color: #000080; border-bottom-color: #000080; border-top-style: solid; border-bottom-style: solid;}
 #SearchTitle {position: absolute; top: 13%; left: 10%;}

@@ -8,34 +8,33 @@
 <html>
 <head>
 <link rel="shortcut icon" href="#">
-<link rel="stylesheet" href="css/header.css">
-<link rel="stylesheet" href="css/profile.css">
+<link rel="stylesheet" href="TeamProject/css/header.css">
+<link rel="stylesheet" href="TeamProject/css/profile.css">
 </head>
 <body>
 <div id="header">
-  <a href="MainPage.do"><img src="css/image/Alogo.png" width=70px height=70px></a><h2>| PROFILE</h2>
+  <a href="MainPage.sign"><img src="TeamProject/css/image/Alogo.png" width=70px height=70px></a><h2>| PROFILE</h2>
 </div>
 <h2>&nbsp;&nbsp;&nbsp;&nbsp;PROFILE</h2>
 
 <div>
     <p>
-    <img src="css/image/user2.png" id="profileimg"  align = "left">
+    <img src="TeamProject/css/image/user2.png" id="profileimg"  align = "left">
     <div>
-    <h3> &nbsp;&nbsp;&nbsp;이름 </h3> <p id="pname"> &nbsp;&nbsp;&nbsp;조이박 </p>  
-    <h3> &nbsp;&nbsp;&nbsp;소개 </h3> <p id="pinfo"> &nbsp;&nbsp;&nbsp;안녕하세요 조이박입니다! </p>
+    <h3> &nbsp;&nbsp;&nbsp;이름 </h3> <p id="pname"> &nbsp;&nbsp;&nbsp;GPS </p>  
+    <h3> &nbsp;&nbsp;&nbsp;소개 </h3> <p id="pinfo"> &nbsp;&nbsp;&nbsp;안녕하세요 GPS입니다! </p>
     </div>
 </div>
 <br>
 <br>
 <p style='width:80px; position: absolute; top: 25%; left: 70%;'>
-    <a href="profilemodify.do"><button class="snip1535">Modify</button></a>
+    <a href="profilemodify.sign"><button class="snip1535">Modify</button></a>
 </p>
 </body>
 <%
 	//세션값을 받아와서 이메일 이외 정보인 해당 유저의 이름과 정보글을 가져와서 표시함
-	request.setCharacterEncoding("utf-8");
 	String email = (String)session.getAttribute("email");
-			
+	System.out.println(email);
 			
 			ProfileDao dao = new ProfileDao();
 			ArrayList<ProfileDto> dtos = dao.profileNameSearch(email);

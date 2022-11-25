@@ -54,6 +54,7 @@ public class ProfileDao {
 	// 프로필을 수정했을때 텍스트안의 값을 받아서 업데이트 시킴
 	public void profileUpdate(String uname, String infor, String email) {
 			String sql = "update signup set uname=?, infor=? where email=?";
+			System.out.println(sql);
 			try(Connection con = getConnection();
 					PreparedStatement pstmt = con.prepareStatement(sql);
 				)

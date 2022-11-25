@@ -22,8 +22,7 @@ public class SInsertService implements SignUpService {
 		SignUpDto dto = new SignUpDto(email, uname, pwd, info, 0);
 		dao.insert(dto);
 		
-		response.sendRedirect("login.jsp?email="+ email);
-
+		request.setAttribute("email", email);
 	}
 
 }

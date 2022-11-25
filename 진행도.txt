@@ -1,0 +1,25 @@
+signup 수정하기 이메일 확인 대신 전화번호
+login 실패시 오류 메세지 하기
+profileupdate 자꾸 null값 들어감
+<<<<head 이런거 뜨는거
+
+
+Intro - 	login			O
+	signup			O
+Login - 	성공시 main 		O
+	실패시 redirect, signup	O
+Signup - login			O
+Main - 	information, 		O
+	profile			O
+	searchresult, 		O
+	Cart
+
+Profile - profiledit			▲
+
+Profile이랑 searchresult information들은 
+로고 클릭하거나 장바구니 담으면 
+main으로 이동
+
+session객체 java에서 쓰기
+HttpSession session = request.getSession();
+session.setAttribute;

@@ -9,25 +9,28 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
 <meta charset="UTF-8">
 <title>Main Page</title>
-<link rel="stylesheet" href="css/main.css">
-<link rel="stylesheet" href="css/header.css">
-<script type="text/javascript" src="jsfolder/MainHeader.js?ver=1"></script>
+<link rel="stylesheet" href="TeamProject/css/main.css">
+<link rel="stylesheet" href="TeamProject/css/header.css">
+<script type="text/javascript" src="TeamProject/jsfolder/MainHeader.js?ver=1"></script>
 </head>
+<%	
+	String email = (String)request.getAttribute("email"); 
+%>
 <body>
 <form>
 <div id="header">
-	<img src="css/image/Alogo.png" width=70px height=70px><h2>| STORE</h2>
+	<img src="TeamProject/css/image/Alogo.png" width=70px height=70px><h2>| STORE</h2>
 </div>
 <div id="Category">
 	<div id="icons">
 		<script>
 		//검색창에 엔터를 눌렀을때 해당 주소에 파라미터값을 넘겨줌
 			function enterKey(value) {
-				location.href="SearchResult.do?Search=" + value;
+				location.href="SearchResult.game?Search=" + value;
 				alert("검색 완료")
 		}
 		</script>
-		<input type="text" id="searchIn" placeholder="검색어를 입력해주세요" autocomplete="off" onkeydown="if(event.keyCode == 13){enterKey(this.value)}"><a href="profile.do"><img src="css/image/user2.png" width=50 height=50></a><a href="cart.do"><img src="css/image/cart.png" width=55 height=55></a>
+		<input type="text" id="searchIn" placeholder="검색어를 입력해주세요" autocomplete="off" onkeydown="if(event.keyCode == 13){enterKey(this.value)}"><a href="profile.sign"><img src="TeamProject/css/image/user2.png" width=50 height=50></a><a href="cart.cart"><img src="TeamProject/css/image/cart.png" width=55 height=55></a>
 	</div>
 	<div id="BorderLine">
 		<h4>게임</h4>
@@ -38,8 +41,8 @@
 				<ul>
 					<a>카테고리</a>
 					<ul>
-						<a href="TagSearchResult.do?Search=무료"><li>무료 게임</li></a>
-						<a href="TagSearchResult.do?Search=인기"><li>인기 게임</li></a>
+						<a href="TagSearchResult.game?Search=무료"><li>무료 게임</li></a>
+						<a href="TagSearchResult.game?Search=인기"><li>인기 게임</li></a>
 					</ul>
 				</ul>
 			</div>
@@ -47,12 +50,12 @@
 				<ul>
 					<a>장르</a>
 					<ul>
-						<a href="TagSearchResult.do?Search=1인칭"><li>1인칭 슈팅</li></a>
-						<a href="TagSearchResult.do?Search=액션"><li>액션</li></a>
-						<a href="TagSearchResult.do?Search=전략"><li>전략</li></a>
-						<a href="TagSearchResult.do?Search=멀티플레이"><li>멀티플레이</li></a>
-						<a href="TagSearchResult.do?Search=액션RPG"><li>액션 RPG</li></a>
-						<a href="TagSearchResult.do?Search=공포"><li>공포</li></a>
+						<a href="TagSearchResult.game?Search=1인칭"><li>1인칭 슈팅</li></a>
+						<a href="TagSearchResult.game?Search=액션"><li>액션</li></a>
+						<a href="TagSearchResult.game?Search=전략"><li>전략</li></a>
+						<a href="TagSearchResult.game?Search=멀티플레이"><li>멀티플레이</li></a>
+						<a href="TagSearchResult.game?Search=액션RPG"><li>액션 RPG</li></a>
+						<a href="TagSearchResult.game?Search=공포"><li>공포</li></a>
 					</ul>
 				</ul>
 			</div>
@@ -67,24 +70,15 @@
 		</ol>
 		<div class="carousel-inner">
 			<div class="carousel-item active">
-<<<<<<< HEAD
-				<a href="Information/DivisionInformation.do"><img class="d-block w-100" src="css/image/division.jpg" alt="Second slide" width=553px height=500px></a>
+				<a href="DivisionInformation.game"><img class="d-block w-100" src="TeamProject/css/image/division.jpg" alt="Second slide" width=553px height=500px></a>
 			</div>
 		<div class="carousel-item">
-			<a href="Information/EscapeFromTarkovInformation.do"><img class="d-block w-100" src="css/image/eft_logo_promo.jpg" alt="Second slide" width=553px height=500px></a>
+			<a href="EscapeFromTarkovInformation.game"><img class="d-block w-100" src="TeamProject/css/image/eft_logo_promo.jpg" alt="Second slide" width=553px height=500px></a>
 		</div>
 		<div class="carousel-item">
-			<a href="Information/h1z1Information.do"><img class="d-block w-100" src="css/image/h1z1.jpg" alt="Third slide" width=553px height=500px></a>
-=======
-				<a href="Information/DivisionInformation.do"><img class="d-block w-100" src="css/image/division.jpg" alt="Second slide" width=553px height=500px></a>
+			<a href="h1z1Information.game"><img class="d-block w-100" src="TeamProject/css/image/h1z1.jpg" alt="Third slide" width=553px height=500px></a>
+				<a href="DivisionInformation.game"><img class="d-block w-100" src="TeamProject/css/image/division.jpg" alt="Second slide" width=553px height=500px></a>
 			</div>
-		<div class="carousel-item">
-			<a href="Information/EscapeFromTarkovInformation.do"><img class="d-block w-100" src="css/image/eft_logo_promo.jpg" alt="Second slide" width=553px height=500px></a>
-		</div>
-		<div class="carousel-item">
-			<a href="Information/h1z1Information.do"><img class="d-block w-100" src="css/image/h1z1.jpg" alt="Third slide" width=553px height=500px></a>
->>>>>>> f2cf019f82a6a2f795695fe367aa93a621286be4
-		</div>
 		</div>
 		<a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
 		<span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -101,39 +95,23 @@
 	<div id="famousTagCard">
 		<div class="card">
 			<div class="cardImageArea">
-<<<<<<< HEAD
-				<a href="Information/DarkSoulsInformation.do"><img src="css/image/Dark_souls_3_cover_art.jpg" alt=""></a>
-=======
-				<a href="Information/DarkSoulsInformation.do"><img src="css/image/Dark_souls_3_cover_art.jpg" alt=""></a>
->>>>>>> f2cf019f82a6a2f795695fe367aa93a621286be4
+				<a href="DarkSoulsInformation.game"><img src="TeamProject/css/image/Dark_souls_3_cover_art.jpg" alt=""></a>
 			</div>
 			<h4>Dark Souls lll</h4>
 			<p class="price">₩49,800</p>
 		</div>
 		<div class="card">
-<<<<<<< HEAD
-			<a href="Information/EldenRingInformation.do"><img src="css/image/eldenring.jpg" alt=""></a>
-=======
-			<a href="Information/EldenRingInformation.do"><img src="css/image/eldenring.jpg" alt=""></a>
->>>>>>> f2cf019f82a6a2f795695fe367aa93a621286be4
+			<a href="EldenRingInformation.game"><img src="TeamProject/css/image/eldenring.jpg" alt=""></a>
 			<h4>Elden Ring</h4>
 			<p class="price">₩64,800</p>
 		</div>
 		<div class="card">
-<<<<<<< HEAD
-			<a href="Information/BattleFieldInformation.do"><img src="css/image/BF1.jpg" alt=""></a>
-=======
-			<a href="Information/BattleFieldInformation.do"><img src="css/image/BF1.jpg" alt=""></a>
->>>>>>> f2cf019f82a6a2f795695fe367aa93a621286be4
+			<a href="BattleFieldInformation.game"><img src="TeamProject/css/image/BF1.jpg" alt=""></a>
 			<h4>BattleField 1™</h4>
 			<p class="price">₩11,000</p>
 		</div>
 		<div class="card">
-<<<<<<< HEAD
-			<a href="Information/EscapeFromTarkovInformation.do"><img src="css/image/eft.jpg" alt=""></a>
-=======
-			<a href="Information/EscapeFromTarkovInformation.do"><img src="css/image/eft.jpg" alt=""></a>
->>>>>>> f2cf019f82a6a2f795695fe367aa93a621286be4
+			<a href="EscapeFromTarkovInformation.game"><img src="TeamProject/css/image/eft.jpg" alt=""></a>
 			<h4>EscapeFromTarkov</h4>
 			<p class="price">₩55,800</p>
 		</div>
@@ -143,38 +121,22 @@
 	</div>
 	<div id="freeTagCard">
 		<div class="card">
-<<<<<<< HEAD
-			<a href="Information/csgoInformation.do"><img src="css/image/csgo.jpg" alt=""></a>
-=======
-			<a href="Information/csgoInformation.do"><img src="css/image/csgo.jpg" alt=""></a>
->>>>>>> f2cf019f82a6a2f795695fe367aa93a621286be4
+			<a href="csgoInformation.game"><img src="TeamProject/css/image/csgo.jpg" alt=""></a>
 			<h4>CS:GO</h4>
 			<p class="price">무료</p>
 		</div>
 		<div class="card">
-<<<<<<< HEAD
-			<a href="Information/WarthunderInformation.do"><img src="css/image/warThunder.jpg" alt=""></a>
-=======
-			<a href="Information/WarthunderInformation.do"><img src="css/image/warThunder.jpg" alt=""></a>
->>>>>>> f2cf019f82a6a2f795695fe367aa93a621286be4
+			<a href="WarthunderInformation.game"><img src="TeamProject/css/image/warThunder.jpg" alt=""></a>
 			<h4>War Thunder</h4>
 			<p class="price">무료</p>
 		</div>
 		<div class="card">
-<<<<<<< HEAD
-			<a href="Information/WarframeInformation.do"><img src="css/image/warframe.jpg" alt=""></a>
-=======
-			<a href="Information/WarframeInformation.do"><img src="css/image/warframe.jpg" alt=""></a>
->>>>>>> f2cf019f82a6a2f795695fe367aa93a621286be4
+			<a href="WarframeInformation.game"><img src="TeamProject/css/image/warframe.jpg" alt=""></a>
 			<h4>Warframe</h4>
 			<p class="price">무료</p>
 		</div>
 		<div class="card">
-<<<<<<< HEAD
-			<a href="Information/DeceitInformation.do"><img src="css/image/deceit.jpg" alt=""></a>
-=======
-			<a href="Information/DeceitInformation.do"><img src="css/image/deceit.jpg" alt=""></a>
->>>>>>> f2cf019f82a6a2f795695fe367aa93a621286be4
+			<a href="DeceitInformation.game"><img src="TeamProject/css/image/deceit.jpg" alt=""></a>
 			<h4>Deceit</h4>
 			<p class="price">무료</p>
 		</div>

@@ -20,7 +20,7 @@ public class SignUpDao {
 	}
 	// 입력 칸에 입력한 정보들을 받아서 회원정보 테이블에 넣음
 	public void insert(SignUpDto dto) {
-		String sql = "insert into signup(email, uname, pwd) values(?, ? ,?)";
+		String sql = "insert into signup(email, uname, pwd, credit) values(?, ? , ?, 0)";
 		try(Connection con = getConnection();
 				PreparedStatement pstmt = con.prepareStatement(sql);
 			)
