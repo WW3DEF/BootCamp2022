@@ -1,0 +1,58 @@
+html, body {
+	margin: 0;
+	padding: 0;
+	width: 100%;
+	height: 100%;
+}
+#insertForm {
+	margin-top: 2%;
+	height: 80%;
+}
+.ins {
+	margin-left: 10%;
+	margin-top: 10%;
+	width: 80%;
+}
+
+#insInfo {
+	border-bottom-style: solid;
+	padding-bottom: 2%;
+}
+
+.input {
+	width: 94.5%;
+	padding-left: 3%;
+	font-size: 20px;
+}
+#intitle {
+	border-style: solid;
+	height: 10%;
+	margin-bottom: 2%;
+}
+hr {
+	size: 2%;
+	background-color: black;
+}
+#intag {
+	border-style: solid;
+	height: 70%;
+	background-color: transparent;
+}
+#nickname {
+	margin-top: 2%;
+}
+.btn {
+	margin-top: 3%;
+	border-style: none;
+	width: 8%;
+	height: 8%;
+	font-size: 20px;
+}
+#write{
+	background-color: #000033;
+	color: white;
+}
+#cancel{
+	background-color: #999999;
+	color: white;
+}

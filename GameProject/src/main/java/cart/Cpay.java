@@ -5,6 +5,7 @@ import java.io.IOException;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 public class Cpay implements CartService {
 
@@ -14,11 +15,11 @@ public class Cpay implements CartService {
 		request.setCharacterEncoding("utf-8");
 
 		CartDao dao = new CartDao();
-		String smail = (String) request.getAttribute("email");
+		HttpSession session = request.getSession();
+		String smail = (String) session.getAttribute("email");
+		System.out.println(smail);
 		dao.payClearCart(smail);
 		
-		response.sendRedirect("MainPage.jsp");
 
 	}
-
 }

@@ -12,7 +12,7 @@ Signup - login			O
 Main - 	information, 		O
 	profile			O
 	searchresult, 		O
-	Cart
+	Cart			O
 
 Profile - profiledit			▲
 

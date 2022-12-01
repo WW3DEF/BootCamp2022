@@ -71,6 +71,8 @@ INSERT INTO game VALUES(8, 'Deceit', 0, '1인칭, 공포, 멀티플레이, 무�
 INSERT INTO game VALUES(9, 'H1Z1', 0, '3인칭, 액션, 멀티플레이, 무료게임', 'css/image/h1z1.jpg');
 INSERT INTO game VALUES(10, 'Tom Clancys The Division', 33000, '3인칭, 액션RPG, 멀티플레이');
 
+UPDATE signup SET uname = 'test1', infor='안녕' WHERE email='test@naver.com';
+
 SELECT * FROM signup;
 SELECT * FROM game;
 SELECT * FROM cart;

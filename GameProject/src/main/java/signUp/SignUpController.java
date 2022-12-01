@@ -20,33 +20,33 @@ public class SignUpController extends HttpServlet {
     	
     	String uri = request.getRequestURI();
     	String com = uri.substring(uri.lastIndexOf("/")+1, uri.lastIndexOf(".sign"));
-    	System.out.println(com);
+    	System.out.println("현재 페이지는 " + com + "입니다.");
 
     	if(com != null && com.equals("index")) { 
-    		viewPage = "/TeamProject/IntroductionPage.jsp";
+    		viewPage = "/WEB-INF/TeamProject/IntroductionPage.jsp";
     	} else if(com != null && com.equals("signup")) { 
-    		viewPage = "/TeamProject/signup.jsp";
+    		viewPage = "/WEB-INF/TeamProject/signup.jsp";
     	} else if(com != null && com.equals("login")) { 
-    		viewPage = "/TeamProject/login.jsp";
+    		viewPage = "/WEB-INF/TeamProject/login.jsp";
     	} else if(com != null && com.equals("insert")) { 
     		SignUpService service = new SInsertService();
     		service.execute(request, response);
-    		viewPage = "/TeamProject/login.sign";
+    		viewPage = "/WEB-INF/TeamProject/login.sign";
     	} else if(com != null && com.equals("LoginCheck")) { 
     		SignUpService service = new LoginCheckService();
     		service.execute(request, response);
     		String Page = (String)request.getAttribute("Login");
     		viewPage = Page;
     	} else if(com != null && com.equals("MainPage")) { 
-    		viewPage = "/TeamProject/MainPage.jsp";
+    		viewPage = "/WEB-INF/TeamProject/MainPage.jsp";
     	} else if(com != null && com.equals("profile")) { 
-    		viewPage = "/TeamProject/profile.jsp";
+    		viewPage = "/WEB-INF/TeamProject/profile.jsp";
     	} else if(com != null && com.equals("profilemodify")) { 
-    		viewPage = "/TeamProject/profilemodify.jsp";
+    		viewPage = "/WEB-INF/TeamProject/profilemodify.jsp";
     	} else if(com != null && com.equals("profileUpdate")) { 
     		SignUpService service = new ProfileUpdate();
     		service.execute(request, response);
-    		viewPage = "/TeamProject/profile.sign";
+    		viewPage = "/WEB-INF/TeamProject/profile.sign";
     	}
     	
     	RequestDispatcher rd = request.getRequestDispatcher(viewPage);
