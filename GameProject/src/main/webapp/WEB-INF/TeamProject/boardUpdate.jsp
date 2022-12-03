@@ -1,5 +1,5 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-    pageEncoding="EUC-KR"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -12,13 +12,15 @@
 	<div id="header">
 	  <a href="MainPage.sign"><img src="resources/css/image/Alogo.png" width=70px height=70px></a><h2>| Board</h2>
 	</div>
-	<h1 class="ins" id="insInfo">°Ô½ÃÆÇ > ±Û¾²±â</h1><h3 id="nickname" class="ins">´Ð³×ÀÓ : <span id="vwName">¤·¤±¤¤¤·¤©¤¤</span></h3>
-	<div id="insertForm" class="ins">
-		<input type="text" placeholder="Á¦¸ñ" name="btitle" class="input" id="intitle">
-		<hr>
-		<input type="text" placeholder="³»¿ë" name="btag" class="input" id="intag">
-		<button class="btn" id="write">ÀÛ¼º</button>
-		<button class="btn" id="cancel">Ãë¼Ò</button>
-	</div>
+	
+	<form action="BUpdate.board?bnum=${dto.bnum}" method="post">
+		<h1 class="ins" id="insInfo">ê¸€ ìˆ˜ì •í•˜ê¸°</h1><h3 id="nickname" class="ins">ë‹‰ë„¤ìž„ : <span id="vwName">${dto.bwriter}</span></h3>
+		<div id="insertForm" class="ins">
+			<input type="text" value="${dto.btitle}" name="btitle" class="input" id="intitle">
+			<hr>
+			<input type="text" value="${dto.btag}" name="btag" class="input" id="intag">
+			<button type = "submit" class="btn" id="update">ìˆ˜ì •</button></a>
+			<button onClick="location.href='boardView.board?bnum=${dto.bnum}'" class="btn" id="cancel">ì·¨ì†Œ</button>
+		</div>
 </body>
 </html>

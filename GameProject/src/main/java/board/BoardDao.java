@@ -37,13 +37,30 @@ public class BoardDao {
 			pstmt.setString(3,  dto.getBwriter());
 			pstmt.setInt(4, dto.getCategory());
 			
-			System.out.println(dto.getBtitle());
 			
 			pstmt.executeUpdate();
 			
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
+	}
+	public void update(int bnum, String btitle, String btag) {
+		String sql = "UPDATE board SET btitle = ?, btag = ? WHERE bnum =?";
+		
+		try (
+			Connection con = getConnection();
+			PreparedStatement pstmt = con.prepareStatement(sql);
+		)
+		{
+			pstmt.setString(1, btitle);
+			pstmt.setString(2, btag);
+			pstmt.setInt(3,  bnum);
+			
+			pstmt.executeUpdate();
+
+		} catch (Exception e) {
+			e.printStackTrace();
+		}		
 	}
 	
 	//게시판 보기
@@ -127,6 +144,40 @@ public class BoardDao {
 				e.printStackTrace();
 			}
 			return dto;
+		}
+		public int view(int bnum) {
+			int view = 0;
+			String sql = "select bview from board where bnum = "+ bnum;
+			
+			try (	Connection con = getConnection();
+					Statement stmt = con.createStatement();
+					ResultSet rs = stmt.executeQuery(sql);
+				){
+					rs.next();
+					view = rs.getInt(1);
+			} catch (Exception e) {	
+				e.printStackTrace();
+			}
+			return view;
+		}
+		
+		public int viewUpdate(int view, int num) {
+			//SQL문(업데이트로 조회수 변경하기)
+			String sql = "update board set bview = ? where bnum = ?";
+			try (
+				Connection con = getConnection();						//커넥션 얻기
+				PreparedStatement pstmt = con.prepareStatement(sql);	//sql문 실행
+			) {
+				//조회수를 위한 view와 고유번호를 위한 num 가져가기
+				pstmt.setInt(1, view);
+				pstmt.setInt(2, num);
+				//조회수 업데이트 하기
+				return pstmt.executeUpdate();	
+			} catch(Exception e) {
+				e.printStackTrace();
+			}
+			//데이터베이스 오류시
+			return -1;
 		}
 			
 }

@@ -74,14 +74,25 @@ INSERT INTO game VALUES(8, 'Deceit', 0, '1인칭, 공포, 멀티플레이, 무�
 INSERT INTO game VALUES(9, 'H1Z1', 0, '3인칭, 액션, 멀티플레이, 무료게임', 'css/image/h1z1.jpg');
 INSERT INTO game VALUES(10, 'Tom Clancys The Division', 33000, '3인칭, 액션RPG, 멀티플레이');
 
-INSERT INTO board VALUES(1,'어떻게 사용하나요?', '장바구니 어떻게 쓰나요?', 'test@naver.com', NOW(), 0, 1);
+INSERT INTO board VALUES(NULL, 'test1', 'test1', 'test@naver.com', NOW(), 0, 1);
+INSERT INTO board VALUES(NULL, 'test2', 'test2', 'test@naver.com', NOW(), 0, 1);
+INSERT INTO board VALUES(NULL, 'test3', 'test3', 'test@naver.com', NOW(), 0, 1);
+INSERT INTO board VALUES(NULL, 'test4', 'test4', 'test@naver.com', NOW(), 0, 1);
+INSERT INTO board VALUES(NULL, 'test5', 'test5', 'test@naver.com', NOW(), 0, 1);
+INSERT INTO board VALUES(NULL, 'test6', 'test6', 'test@naver.com', NOW(), 0, 1);
+INSERT INTO board VALUES(NULL, 'test7', 'test7', 'test@naver.com', NOW(), 0, 1);
+INSERT INTO board VALUES(NULL, 'test8', 'test8', 'test@naver.com', NOW(), 0, 1);
+INSERT INTO board VALUES(NULL, 'test9', 'test9', 'test@naver.com', NOW(), 0, 1);
+INSERT INTO board VALUES(NULL, 'test10', 'test10', 'test@naver.com', NOW(), 0, 1);
+INSERT INTO board VALUES(NULL, 'test1', 'test1', 'test@naver.com', NOW(), 0, 1);
+INSERT INTO board VALUES(NULL, 'test1', 'test1', 'test@naver.com', NOW(), 0, 1);
+INSERT INTO board VALUES(NULL, 'test1', 'test1', 'test@naver.com', NOW(), 0, 1);
+INSERT INTO board VALUES(NULL,'어떻게 사용하나요?', '장바구니 어떻게 쓰나요?', 'test@naver.com', NOW(), 0, 1);
 INSERT INTO board VALUES(NULL ,'할인은 안하나요?', '언제쯤 할까요??', 'test@naver.com', NOW(), 0, 1);
-INSERT INTO board VALUES('어떻게 사용하나요?', '장바구니 어떻게 쓰나요?', 'test@naver.com', NOW(), 0, 1);
-INSERT INTO board VALUES('어떻게 사용하나요?', '장바구니 어떻게 쓰나요?', 'test@naver.com', NOW(), 0, 1);
-INSERT INTO board VALUES('어떻게 사용하나요?', '장바구니 어떻게 쓰나요?', 'test@naver.com', NOW(), 0, 1);
-INSERT INTO board VALUES('어떻게 사용하나요?', '장바구니 어떻게 쓰나요?', 'test@naver.com', NOW(), 0, 1);
-INSERT INTO board VALUES('어떻게 사용하나요?', '장바구니 어떻게 쓰나요?', 'test@naver.com', NOW(), 0, 1);
-INSERT INTO board VALUES('어떻게 사용하나요?', '장바구니 어떻게 쓰나요?', 'test@naver.com', NOW(), 0, 1);
+
+
+
+INSERT INTO comments VALUES(NULL, 'test@naver.com', '15', 'test용', NOW(), 0, 1);
 
 UPDATE signup SET uname = 'test1', infor='안녕' WHERE email='test@naver.com';
 

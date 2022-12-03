@@ -12,7 +12,6 @@
 	String cate = request.getParameter("category");
 	int category = Integer.parseInt(cate);
 	session.setAttribute("category", category);
-	
 %>    
     
 <!DOCTYPE html>
@@ -78,13 +77,13 @@
 		</thead>
 		<tbody>
 			<c:forEach var='dto' items='${dtos}'>
-			<tr>
-				<td>${dto.bnum}</a></td>
-				<td><a href="boardUpdate.board?bnum=${dto.bnum}">${dto.btitle}</a></td>
-				<td>${dto.bwriter}</td>
-				<td><fmt:formatDate value="${dto.bdate}"/></td>
-				<td>${dto.bview}</td>
-			</tr>
+				<tr onClick="location.href='boardView.board?bnum=${dto.bnum}'">
+					<td>${dto.bnum}</td>
+					<td>${dto.btitle}</td>
+					<td>${dto.bwriter}</td>
+					<td><fmt:formatDate value="${dto.bdate}"/></td>
+					<td>${dto.bview}</td>
+				</tr>
 		</c:forEach>
 		</tbody>
 	</table>

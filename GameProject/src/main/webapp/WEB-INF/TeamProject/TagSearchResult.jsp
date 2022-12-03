@@ -31,34 +31,34 @@
             </ul>
         </div>
         <div id="Result">
-			<div id="list1">
+			<div id="list1" onClick="location.href='DarkSoulsInformation.game'">
 			
 			</div>
-			<div id="list2">
+			<div id="list2" onClick="location.href='EldenRingInformation.game'">
 			
 			</div>
-			<div id="list3">
+			<div id="list3" onClick="location.href='BattleFieldInformation.game'">
 			
 			</div>
-			<div id="list4">
+			<div id="list4" onClick="location.href='EscapeFromTarkovInformation.game'">
 			
 			</div>
-			<div id="list5">
+			<div id="list5" onClick="location.href='csgoInformation.game'">
 			
 			</div>
-			<div id="list6">
+			<div id="list6" onClick="location.href='WarthunderInformation.game'">
 			
 			</div>
-			<div id="list7">
+			<div id="list7" onClick="location.href='WarframeInformation.game'">
 			
 			</div>
-			<div id="list8">
+			<div id="list8" onClick="location.href='DeceitInformation.game'">
 			
 			</div>
-			<div id="list9">
+			<div id="list9" onClick="location.href='DivisionInformation.game'">
 			
 			</div>
-			<div id="list10">
+			<div id="list10" onClick="location.href='h1z1Information.game'">
 			
 			</div>
         </div>

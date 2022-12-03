@@ -24,7 +24,6 @@ public class BListService implements BoardService {
 			p = Integer.parseInt(page);
 		}
 
-		System.out.println(p);
 		BoardDao dao = new BoardDao();
 		ArrayList<BoardDto> dtos = dao.list(c, p, numOfRecords);
 		
@@ -41,9 +40,6 @@ public class BListService implements BoardService {
 		request.setAttribute("lastNum", lastNum);
 		request.setAttribute("numOfPages", numOfPages);
 		
-		System.out.println(dtos);
-		System.out.println(startNum);
-		System.out.println(numOfPages);
 	}
 
 }

@@ -1,6 +1,10 @@
 <%@page import="java.util.ArrayList"%>
 <%@page import="signUp.ProfileDao"%>
 <%@page import="signUp.ProfileDto"%>
+<%@ taglib prefix ="c" uri = "http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix ="fmt" uri = "http://java.sun.com/jsp/jstl/fmt" %>  
+<%@page import="board.BoardDto"%>
+<%@page import="board.BoardDao"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 
@@ -20,8 +24,8 @@
    
     <div id="section">
          <img src="resources/css/image/unknownAvatar.jpg" alt="이미지 없음" srcset="">
-         <h2>이름</h2>
-         <h3>자기 소개</h3>
+         <h2 id = "pname">이름</h2>
+         <h3 id = "pinfo">자기 소개</h3>
          <a href="profilemodify.sign"><button id="btnModify">프로필 수정</button></a>
     </div>
        <div id="nav">
@@ -34,10 +38,10 @@
    <div id="TwoSection">
       <h1 class="insc">보유중인 게임</h1>
          <ul class="insc">
-            <li><img src="resources/css/image/warframe.jpg"><h2>warframe</h2></li>
+            <li><img src="resources/css/image/warframe.jpg" id = "pgame"><h2>warframe</h2></li>
             <li><img src="resources/css/image/warThunder.jpg"><h2>warThunder</h2></li>
          </ul>
-   </div>
+   </div>	
    <div id="ThirdSection">
       <h1>작성한 게시글</h1>
       <table class="table table-hover" id="myBoard">
@@ -47,21 +51,17 @@
             <th>작성일</th>
          </thead>
          <tbody>
-            <tr>
-               <td>1</td>
-               <td>ㅇㅇㄴㄹㄴㅇ</td>
-               <td>2018-11-23</td>
-            </tr>
-            <tr>
-               <td>2</td>
-               <td>ㅇㅇㄴㄹㄴㅇ</td>
-               <td>2018-11-23</td>
-            </tr>
-            <tr>
-               <td>3</td>
-               <td>ㅇㅇㄴㄹㄴㅇ</td>
-               <td>2018-11-23</td>
-            </tr>
+           	<c:forEach var='dto' items='${dtos}'>
+				<tr>
+           			<a href="boardUpdate.board?bnum=${dto.bnum}">
+						<td>${dto.bnum}</td>
+						<td>${dto.btitle}</td>
+						<td>${dto.bwriter}</td>
+						<td><fmt:formatDate value="${dto.bdate}"/></td>
+						<td>${dto.bview}</td>
+					</a>
+				</tr>
+			</c:forEach>
          </tbody>
       </table>
    </div>
@@ -80,9 +80,9 @@
 				<script>
 					// 프로필 소개글의 데이터가 존재하는 경우 
 					let name = document.querySelector("#pname");
-						name.innerHTML="&nbsp;&nbsp;&nbsp;<%=dto.getName()%>";
+						name.innerHTML="<%=dto.getName()%>";
 						let info = document.querySelector("#pinfo");
-						info.innerHTML="&nbsp;&nbsp;&nbsp;<%=dto.getinFor()%>.";
+						info.innerHTML="<%=dto.getinFor()%>.";
 				</script>
 
 <%
@@ -91,9 +91,9 @@
 %>
 						<script>
 						let name = document.querySelector("#pname");
-						name.innerHTML="&nbsp;&nbsp;&nbsp;<%=dto.getName()%>";
+						name.innerHTML="<%=dto.getName()%>";
 						let info = document.querySelector("#pinfo");
-						info.innerHTML="&nbsp;&nbsp;&nbsp;설정된 소개글이 없습니다.";
+						info.innerHTML="설정된 소개글이 없습니다.";
 						</script>
 <%
 			}

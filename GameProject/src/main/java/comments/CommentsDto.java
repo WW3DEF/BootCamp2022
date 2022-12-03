@@ -7,7 +7,7 @@ public class CommentsDto {
 	private String cobcode;
 	private int cocode;
 	private String cotag;
-	private Date cdate;
+	private String cdate;
 	public int getConum() {
 		return conum;
 	}
@@ -32,14 +32,14 @@ public class CommentsDto {
 	public void setCotag(String cotag) {
 		this.cotag = cotag;
 	}
-	public Date getCdate() {
+	public String getCdate() {
 		return cdate;
 	}
-	public void setCdate(Date cdate) {
+	public void setCdate(String cdate) {
 		this.cdate = cdate;
 	}
 	
-	public CommentsDto(int conum, String cobcode, int cocode, String cotag, Date cdate) {
+	public CommentsDto(int conum, String cobcode, int cocode, String cotag, String cdate) {
 		this.conum = conum;
 		this.cobcode = cobcode;
 		this.cocode = cocode;

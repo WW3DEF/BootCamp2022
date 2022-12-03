@@ -30,13 +30,26 @@ public class BoardController extends HttpServlet {
     		viewPage = "/WEB-INF/TeamProject/board.jsp";
     	} else if(com != null && com.equals("boardWrite")) { 
     		viewPage = "/WEB-INF/TeamProject/boardWrite.jsp";
+    	} else if(com != null && com.equals("boardView")) { 
+    		BoardService service = new BViewService2();
+    		service.execute(request, response);
+    		viewPage = "/WEB-INF/TeamProject/boardView.jsp";
     	} else if(com != null && com.equals("BInsert")) { 
     		BoardService service = new BInsertService();
     		service.execute(request, response);
         	int category = (int) session.getAttribute("category");
     		viewPage = "board.board?category="+category;
-    		System.out.println(viewPage);
-    	}
+    	} else if(com != null && com.equals("boardUpdate")) { 
+    		BoardService service = new BViewService();
+    		service.execute(request, response);
+    		viewPage = "/WEB-INF/TeamProject/boardUpdate.jsp";
+    	} else if(com != null && com.equals("BUpdate")) { 
+    		BoardService service = new BUpdateService();
+    		service.execute(request, response);
+    		int bnum = Integer.parseInt(request.getParameter("bnum"));
+    		System.out.println(bnum);
+    		viewPage = "/WEB-INF/TeamProject/boardView.board?bnum="+bnum;
+    	} 
     	
     	RequestDispatcher rd = request.getRequestDispatcher(viewPage);
     	rd.forward(request, response);
