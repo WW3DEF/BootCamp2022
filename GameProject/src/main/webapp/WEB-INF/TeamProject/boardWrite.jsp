@@ -1,24 +1,33 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-    pageEncoding="EUC-KR"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<% 
+	request.setCharacterEncoding("utf-8");
+    String email = (String)session.getAttribute("email");
+	int category = Integer.parseInt(request.getParameter("category"));  
+%>
 <!DOCTYPE html>
 <html>
 <head>
-<link rel="stylesheet" href="css/header.css">
-<link rel="stylesheet" href="css/boardForm.css">
+<link rel="stylesheet" href="resources/css/header.css">
+<link rel="stylesheet" href="resources/css/boardForm.css">
 <meta charset="EUC-KR">
-<title>Board Write</title>
+<title>ê²Œì‹œíŒ ìž‘ì„±</title>
 </head>
 <body>
 	<div id="header">
-	  <a href="MainPage.sign"><img src="css/image/Alogo.png" width=70px height=70px></a><h2>| Board</h2>
+	  <a href="MainPage.sign"><img src="resources/css/image/Alogo.png" width=70px height=70px></a><h2>| Board</h2>
 	</div>
-	<h1 class="ins" id="insInfo">°Ô½ÃÆÇ > ±Û¾²±â</h1><h3 id="nickname" class="ins">´Ð³×ÀÓ : <span id="vwName">¤·¤±¤¤¤·¤©¤¤</span></h3>
-	<div id="insertForm" class="ins">
-		<input type="text" placeholder="Á¦¸ñ" name="btitle" class="input" id="intitle">
-		<hr>
-		<input type="text" placeholder="³»¿ë" name="btag" class="input" id="intag">
-		<button class="btn" id="write">ÀÛ¼º</button>
-		<button class="btn" id="cancel">Ãë¼Ò</button>
-	</div>
+	<form action="BInsert.board" method="post">
+		<h1 class="ins" id="insInfo"><% //num ìœ í˜• ë²ˆí˜¸ì— ë”°ë¥¸ h1 í‘œì‹œ
+					if(category == 1) out.println("QnA");
+		    		if(category == 2) out.println("ìžìœ "); %> ê²Œì‹œíŒ > ê¸€ì“°ê¸°</h1><h3 id="nickname" class="ins">ë‹‰ë„¤ìž„ : <span id="vwName"><%= email %></span></h3>
+		<div id="insertForm" class="ins">
+			<input type="text" placeholder="ì œëª©" name="btitle" class="input" id="intitle">
+			<hr>
+			<input type="text" placeholder="ë‚´ìš©" name="btag" class="input" id="intag">
+			<button type = "submit" class="btn" id="write">ìž‘ì„±</button></a>
+			<button class="btn" id="cancel">ì·¨ì†Œ</button>
+		</div>
+	</form>
 </body>
 </html>

@@ -1,5 +1,20 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-    pageEncoding="EUC-KR"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<%@ taglib prefix ="c" uri = "http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix ="fmt" uri = "http://java.sun.com/jsp/jstl/fmt" %>  
+<%@page import="board.BoardDto"%>
+<%@page import="board.BoardDao"%>
+<%
+	//ÏÑ∏ÏÖòÏúºÎ°ú Î°úÍ∑∏Ïù∏Îêú ÌöåÏõê Ï†ïÎ≥¥ Í∞ÄÏ†∏Ïò§Í∏∞
+    String email = (String)session.getAttribute("email"); 
+
+	//Í≤åÏãúÌåê Î≥¥Ïó¨Ï£ºÍ∏∞ ÏúÑÌïú ÏΩîÎìú(numÏùÄ Ïú†Ìòï Î∞õÏïÑÏò§Îäî Î≥ÄÏàò)
+	String cate = request.getParameter("category");
+	int category = Integer.parseInt(cate);
+	session.setAttribute("category", category);
+	
+%>    
+    
 <!DOCTYPE html>
 <html>
 <head>
@@ -7,8 +22,10 @@
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
 
 <link rel="stylesheet" href="resources/css/header.css">
-<link rel="stylesheet" href="resources/css/board.css">
-<title>∞‘Ω√∆«</title>
+<link rel="stylesheet" href="resources/css/board.css"><title><% 	
+	    		//num Ïú†Ìòï Î≤àÌò∏Ïóê Îî∞Î•∏ title ÌëúÏãú
+	    		if(category == 1) out.println("QnA");
+	    		if(category == 2) out.println("ÏûêÏú† Í≤åÏãúÌåê"); %></title>
 </head>
 <body>
 	<div id="header">
@@ -16,56 +33,59 @@
 	</div>
 	<div class="container">
 	<table class="table table-hover">
-		<caption id="bgcaption"><h1>∞‘Ω√∆«</h1></caption>
-		<caption id="smcaption"><a href="boardwrite.jsp"><button id="btnwrite">∞‘Ω√±€ ¿€º∫</button></a></caption>
+		<caption id="bgcaption"><h1><% //num Ïú†Ìòï Î≤àÌò∏Ïóê Îî∞Î•∏ h1 ÌëúÏãú
+				if(category == 1) out.println("QnA");
+	    		if(category == 2) out.println("ÏûêÏú†"); %> Í≤åÏãúÌåê</h1></caption>
+		<caption id="smcaption"><a href="boardWrite.board?category=<%= category %>"><button id="btnwrite">Í≤åÏãúÍ∏Ä ÏûëÏÑ±</button></a></caption>
 		<caption>
 			<div class="d-flex justify-content-center">
 				<nav aria-label="Page navigation example">
 				  <ul class="pagination">
-				    <li class="page-item">
-				      <a class="page-link" href="#" aria-label="Previous">
-				        <span aria-hidden="true">&laquo;</span>
-				      </a>
-				    </li>
-				    <li class="page-item"><a class="page-link" href="#">1</a></li>
-				    <li class="page-item"><a class="page-link" href="#">2</a></li>
-				    <li class="page-item"><a class="page-link" href="#">3</a></li>
-				    <li class="page-item">
-				      <a class="page-link" href="#" aria-label="Next">
-				        <span aria-hidden="true">&raquo;</span>
-				      </a>
-				    </li>
+				    <c:if test="${startNum <= 1 }">
+					  <li class="page-item"><a class="page-link" style = "color:grey" onclick = "alert('Ï≤´ ÌéòÏù¥ÏßÄÏûÖÎãàÎã§.')">Previous</a></li>
+					</c:if>
+					<c:if test="${startNum > 1 }">
+					  <li class="page-item"><a class="page-link" href="board.board?category=<%= category%>&p=${startNum - 1}">Previous</a></li>
+					</c:if>
+					<c:forEach var = "i" begin="0" end="${numOfPages-1}" step="1">
+						<c:if test="${startNum+i <= lastNum }">
+							<c:if test = "${startNum+i == p}">
+						  	<li class="page-item active"><a class="page-link" href="board.board?category=<%= category%>&p=${startNum + i}">${startNum + i}</a></li>	
+							</c:if>
+							<c:if test = "${startNum+i != p}">
+						  	<li class="page-item"><a class="page-link" href="board.board?category=<%= category%>&p=${startNum + i}">${startNum + i}</a></li>	
+							</c:if>
+						</c:if>
+					</c:forEach>
+					<c:if test="${startNum + numOfPages > lastNum }">
+					  <li class="page-item"><a class="page-link" style = "color:grey" onclick = "alert('Îã§Ïùå ÌéòÏù¥ÏßÄÍ∞Ä ÏóÜÏäµÎãàÎã§.')">Next</a></li>
+					</c:if>
+					<c:if test="${startNum + numOfPages <= lastNum }">
+					  <li class="page-item"><a class="page-link" href="board.board?category=<%= category%>&p=${startNum+numOfPages}">Next</a></li>
+					</c:if>
 				  </ul>
 				</nav>
 			</div>
 		</caption>
 		<thead>
 			<tr>
-				<th>π¯»£</th>
-				<th>¡¶∏Ò</th>
-				<th>±€æ¥¿Ã</th>
-				<th>¿€º∫¿œ</th>
+				<th>Î≤àÌò∏</th>
+				<th>Ï†úÎ™©</th>
+				<th>Í∏ÄÏì¥Ïù¥</th>
+				<th>ÏûëÏÑ±Ïùº</th>
+				<th>Ï°∞ÌöåÏàò</th>
 			</tr>
 		</thead>
 		<tbody>
+			<c:forEach var='dto' items='${dtos}'>
 			<tr>
-				<td>§∑§∑</td>
-				<td>§∑§∑</td>
-				<td>§∑§∑</td>
-				<td>§∑§∑</td>
+				<td>${dto.bnum}</a></td>
+				<td><a href="boardUpdate.board?bnum=${dto.bnum}">${dto.btitle}</a></td>
+				<td>${dto.bwriter}</td>
+				<td><fmt:formatDate value="${dto.bdate}"/></td>
+				<td>${dto.bview}</td>
 			</tr>
-			<tr>
-				<td>§∑§∑</td>
-				<td>§∑§∑</td>
-				<td>§∑§∑</td>
-				<td>§∑§∑</td>
-			</tr>
-			<tr>
-				<td>§∑§∑</td>
-				<td>§∑§∑</td>
-				<td>§∑§∑</td>
-				<td>§∑§∑</td>
-			</tr>
+		</c:forEach>
 		</tbody>
 	</table>
 	</div>

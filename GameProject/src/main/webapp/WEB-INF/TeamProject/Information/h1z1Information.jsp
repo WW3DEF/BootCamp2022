@@ -10,16 +10,16 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>GameInformation</title>
-    <link rel="stylesheet" href="TeamProject/css/Gameinfo.css">
-    <link rel="stylesheet" href="TeamProject/css/header.css">
-    <script type="text/javascript" src="TeamProject/jsfolder/clickinsert.js?ver=1"></script>
+    <link rel="stylesheet" href="resources/css/Gameinfo.css">
+    <link rel="stylesheet" href="resources/css/header.css">
+    <script type="text/javascript" src="resources/jsfolder/clickinsert.js?ver=1"></script>
 </head>
 <body>
     <div id="header">
-        <a href="MainPage.sign"><img src="TeamProject/css/image/Alogo.png" width=70px height=70px></a><h2>| GAME</h2>
+        <a href="MainPage.sign"><img src="resources/css/image/Alogo.png" width=70px height=70px></a><h2>| GAME</h2>
     </div>
     <div id="imageSection">
-        <img src="TeamProject/css/image/h1z1info.jpg" width="100%" height="100%">
+        <img src="resources/css/image/h1z1info.jpg" width="100%" height="100%">
                 <div id="FirstInfo">
                 <h1 id="GameTitle">H1Z1</h1>
                 <h3 id="Developer">Daybreak Game Company</h3>
@@ -33,7 +33,7 @@
                 <input type="button" value="장바구니에 담기" id="putInCart">
                 <h4 id="AvildDate">출시 2018년 2월 28일</h4>
                 <div id="StackView">
-                    <img src="TeamProject/css/image/PartyPlay.png" width=40px height=40px><span>멀티 플레이</span>
+                    <img src="resources/css/image/PartyPlay.png" width=40px height=40px><span>멀티 플레이</span>
             </div>
         </div>
     </div>

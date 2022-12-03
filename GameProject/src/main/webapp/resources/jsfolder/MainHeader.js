@@ -58,7 +58,7 @@ function scrollEvent() {
     let A = document.querySelector("#Category");
     let B = document.querySelector("#header");
     let C = this.scrollY;
-    let aT = A.style.top;
+    let aT = A.style.top; 
     let bH = B.style.height;
     if(C > last_scrollTop) {
         B.style.height = "0%";

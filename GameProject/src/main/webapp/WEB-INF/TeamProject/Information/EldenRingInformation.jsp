@@ -10,21 +10,21 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>GameInformation</title>
-    <link rel="stylesheet" href="TeamProject/css/EldenringInfo.css">
-    <link rel="stylesheet" href="TeamProject/css/header.css">
+    <link rel="stylesheet" href="resources/css/EldenringInfo.css">
+    <link rel="stylesheet" href="resources/css/header.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
-    <script type="text/javascript" src="TeamProject/jsfolder/InfoHeader.js?ver=1"></script>
-    <script type="text/javascript" src="TeamProject/jsfolder/clickinsert.js"></script>
+    <script type="text/javascript" src="resources/jsfolder/InfoHeader.js?ver=1"></script>
+    <script type="text/javascript" src="resources/jsfolder/clickinsert.js"></script>
 </head>
 <body>
     <div id="header">
-        <a href="MainPage.sign"><img src="TeamProject/css/image/Alogo.png" width=70px height=70px></a><h2>| GAME</h2>
+        <a href="MainPage.sign"><img src="resources/css/image/Alogo.png" width=70px height=70px></a><h2>| GAME</h2>
     </div>
     <div id="Category">
-        <img src="TeamProject/css/image/EldenRingLogo.png" width=150px height=70px id="EldenRingLogo"><div id="ScrollForCon"><a id="summary">게임 개요</a><a id="feature">게임 특징</a><a id="systemRequire">시스템 요구사항</a></div>
+        <img src="resources/css/image/EldenRingLogo.png" width=150px height=70px id="EldenRingLogo"><div id="ScrollForCon"><a id="summary">게임 개요</a><a id="feature">게임 특징</a><a id="systemRequire">시스템 요구사항</a></div>
     </div>
     <div id="FirstSection">
     <div id="FirstInfoGrad">
@@ -40,17 +40,17 @@
         <input type="button" value="장바구니에 담기" id="putInCart">
         <h4 id="AvildDate">출시 2022년 2월 5일</h4>
         <div id="StackView">
-            <img src="TeamProject/css/image/SoloPlay.png" width=30px height=30px><span>싱글 플레이</span>
-            <img src="TeamProject/css/image/PartyPlay.png" width=40px height=40px><span>온라인 협동</span>
+            <img src="resources/css/image/SoloPlay.png" width=30px height=30px><span>싱글 플레이</span>
+            <img src="resources/css/image/PartyPlay.png" width=40px height=40px><span>온라인 협동</span>
         </div>
         </div>
     </div>
     </div>
     <div id="slideShowBack">
         <div id="screenShots">
-        <img src="TeamProject/image/eldenringSC.png" width="300" height="200">
-        <img src="TeamProject/image/eldenringSC2.jpg" width="300" height="200">
-        <img src="TeamProject/image/eldenringSC3.jpg" width="300" height="200">
+        <img src="resources/image/eldenringSC.png" width="300" height="200">
+        <img src="resources/image/eldenringSC2.jpg" width="300" height="200">
+        <img src="resources/image/eldenringSC3.jpg" width="300" height="200">
         </div>
     </div>
     <div id="TwoSection">
@@ -74,7 +74,7 @@
         <h2>ELDEN RING 주요 특징</h2>
         <div id="ThreeSectionImages">
             
-            <img src="TeamProject/css/image/eldenringThreeSection1.jpg" width="300" height="200">
+            <img src="resources/css/image/eldenringThreeSection1.jpg" width="300" height="200">
             <div id="ThreeSecFirstInfo">
             <h3 class="InfoTitle">새로운 판타지 월드</h3>
             <h4 class="InfoSub">ELDEN RING의 힘에 엮인 수수께끼를 푸세요. 
@@ -83,7 +83,7 @@
             </div>
             
             
-            <img src="TeamProject/css/image/eldenringThreeSection2.jpg" width="300" height="200">
+            <img src="resources/css/image/eldenringThreeSection2.jpg" width="300" height="200">
             <div id="ThreeSecSecondInfo">
             <h3 class="InfoTitle">틈새의 땅 세계 탐험</h3>
             <h4 class="InfoSub">걸어서든, 말을 타든, 혼자든, 온라인으로 다른 플레이어와 함께하든 멋진 월드를 탐험해 보세요.
@@ -91,7 +91,7 @@
             한껏 몰입해 보세요.</h4>
             </div>
             
-            <img src="TeamProject/css/image/eldenringThreeSection3.jpg" width="300" height="200">
+            <img src="resources/css/image/eldenringThreeSection3.jpg" width="300" height="200">
             <div id="ThreeSecThirdInfo">
             <h3 class="InfoTitle">장르의 척도가 되는 게임플레이</h3>
             <h4 class="InfoSub">캐릭터를 생성하고 월드 곳곳에 있는 온갖 무기와 마법 능력, 

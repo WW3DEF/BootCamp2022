@@ -30,6 +30,8 @@ CREATE TABLE board(
 	btag TEXT,
 	bwriter VARCHAR(50),
 	bdate DATE,
+	bview INT(10),
+	category INT(10),
 	FOREIGN KEY (bwriter) REFERENCES signup(email) 
 );
 CREATE TABLE comments(
@@ -46,6 +48,7 @@ CREATE TABLE makegame(
 	mtag TEXT,
 	mfile VARCHAR(100),
 	mwriter VARCHAR(50),
+	mview INT(10),
 	mdate DATE
 );
 
@@ -71,11 +74,21 @@ INSERT INTO game VALUES(8, 'Deceit', 0, '1인칭, 공포, 멀티플레이, 무�
 INSERT INTO game VALUES(9, 'H1Z1', 0, '3인칭, 액션, 멀티플레이, 무료게임', 'css/image/h1z1.jpg');
 INSERT INTO game VALUES(10, 'Tom Clancys The Division', 33000, '3인칭, 액션RPG, 멀티플레이');
 
+INSERT INTO board VALUES(1,'어떻게 사용하나요?', '장바구니 어떻게 쓰나요?', 'test@naver.com', NOW(), 0, 1);
+INSERT INTO board VALUES(NULL ,'할인은 안하나요?', '언제쯤 할까요??', 'test@naver.com', NOW(), 0, 1);
+INSERT INTO board VALUES('어떻게 사용하나요?', '장바구니 어떻게 쓰나요?', 'test@naver.com', NOW(), 0, 1);
+INSERT INTO board VALUES('어떻게 사용하나요?', '장바구니 어떻게 쓰나요?', 'test@naver.com', NOW(), 0, 1);
+INSERT INTO board VALUES('어떻게 사용하나요?', '장바구니 어떻게 쓰나요?', 'test@naver.com', NOW(), 0, 1);
+INSERT INTO board VALUES('어떻게 사용하나요?', '장바구니 어떻게 쓰나요?', 'test@naver.com', NOW(), 0, 1);
+INSERT INTO board VALUES('어떻게 사용하나요?', '장바구니 어떻게 쓰나요?', 'test@naver.com', NOW(), 0, 1);
+INSERT INTO board VALUES('어떻게 사용하나요?', '장바구니 어떻게 쓰나요?', 'test@naver.com', NOW(), 0, 1);
+
 UPDATE signup SET uname = 'test1', infor='안녕' WHERE email='test@naver.com';
 
 SELECT * FROM signup;
 SELECT * FROM game;
 SELECT * FROM cart;
+SELECT * FROM board;
 SELECT cgame FROM cart WHERE cuser="alstjr7437@naver.com" AND cgame=2;
 
 SELECT * FROM game WHERE gnum = ( SELECT cgame FROM cart WHERE cuser="alstjr7437@naver.com" AND cgame=2)
